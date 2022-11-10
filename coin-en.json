@@ -1,0 +1,262 @@
+{
+    "name": "coin",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "ckKwG",
+    "actions": [
+      {
+        "member": "5",
+        "varName": "Opponent",
+        "info": "1",
+        "storage": "1",
+        "varName2": "opponent_id",
+        "name": "Store Member Info"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "1",
+        "storage": "1",
+        "varName2": "command_user_id",
+        "name": "Store Member Info"
+      },
+      {
+        "storage": "1",
+        "varName": "opponent_id",
+        "comparison": "1",
+        "value": "tempVars(\"command_user_id\")",
+        "branch": {
+          "iftrue": "0",
+          "iffalse": "2",
+          "iffalseVal": "6"
+        },
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "",
+        "buttons": [],
+        "selectMenus": [],
+        "attachments": [],
+        "embeds": [
+          {
+            "title": "",
+            "url": "",
+            "color": "ff0000",
+            "timestamp": "false",
+            "imageUrl": "",
+            "thumbUrl": "",
+            "description": "**You cannot play against yourself.**",
+            "fields": [],
+            "author": "",
+            "authorUrl": "",
+            "authorIcon": "",
+            "footerText": "",
+            "footerIconUrl": ""
+          }
+        ],
+        "reply": true,
+        "ephemeral": true,
+        "tts": false,
+        "overwrite": false,
+        "dontSend": false,
+        "editMessage": "0",
+        "editMessageVarName": "",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "Select a side",
+        "buttons": [],
+        "selectMenus": [
+          {
+            "placeholder": "Choose the side of the coin",
+            "id": "msg-select-7e4b2e3",
+            "tempVarName": "side",
+            "row": "",
+            "min": "1",
+            "max": "1",
+            "mode": "MULTIPERSONAL",
+            "time": "",
+            "options": [
+              {
+                "label": "Heads",
+                "description": "Heads site",
+                "value": "haeds",
+                "emoji": "",
+                "default": "false"
+              },
+              {
+                "label": "tails",
+                "description": "Tails side",
+                "value": "tails",
+                "emoji": "",
+                "default": "false"
+              }
+            ],
+            "actions": [
+              {
+                "storage": "1",
+                "varName": "number",
+                "min": "1",
+                "max": "2",
+                "name": "Generate Random Number"
+              },
+              {
+                "storage": "1",
+                "varName": "number",
+                "comparison": "1",
+                "value": "1",
+                "branch": {
+                  "iftrue": "0",
+                  "iffalse": "2",
+                  "iffalseVal": "8"
+                },
+                "name": "Check Variable"
+              },
+              {
+                "storage": "1",
+                "varName": "side",
+                "comparison": "1",
+                "value": "heads",
+                "branch": {
+                  "iftrue": "0",
+                  "iffalse": "2",
+                  "iffalseVal": "6"
+                },
+                "name": "Check Variable"
+              },
+              {
+                "channel": "0",
+                "varName": "",
+                "message": "Heads Wins! ${member}",
+                "buttons": [],
+                "selectMenus": [],
+                "attachments": [],
+                "embeds": [],
+                "reply": true,
+                "ephemeral": false,
+                "tts": false,
+                "overwrite": false,
+                "dontSend": false,
+                "editMessage": "0",
+                "editMessageVarName": "",
+                "storage": "0",
+                "varName2": "",
+                "name": "Send Message"
+              },
+              {
+                "name": "End Action Sequence"
+              },
+              {
+                "channel": "0",
+                "varName": "",
+                "message": "Heads Wins! ${slashParams(\"Opponent\")}",
+                "buttons": [],
+                "selectMenus": [],
+                "attachments": [],
+                "embeds": [],
+                "reply": true,
+                "ephemeral": false,
+                "tts": false,
+                "overwrite": false,
+                "dontSend": false,
+                "editMessage": "0",
+                "editMessageVarName": "",
+                "storage": "0",
+                "varName2": "",
+                "name": "Send Message"
+              },
+              {
+                "name": "End Action Sequence"
+              },
+              {
+                "storage": "1",
+                "varName": "strona",
+                "comparison": "1",
+                "value": "reszka",
+                "branch": {
+                  "iftrue": "0",
+                  "iffalse": "2",
+                  "iffalseVal": "11"
+                },
+                "name": "Check Variable"
+              },
+              {
+                "channel": "0",
+                "varName": "",
+                "message": "Tails Wins! ${member}",
+                "buttons": [],
+                "selectMenus": [],
+                "attachments": [],
+                "embeds": [],
+                "reply": true,
+                "ephemeral": false,
+                "tts": false,
+                "overwrite": false,
+                "dontSend": false,
+                "editMessage": "0",
+                "editMessageVarName": "",
+                "storage": "0",
+                "varName2": "",
+                "name": "Send Message"
+              },
+              {
+                "name": "End Action Sequence"
+              },
+              {
+                "channel": "0",
+                "varName": "",
+                "message": "Tails Wins! ${slashParams(\"Opponent\")}",
+                "buttons": [],
+                "selectMenus": [],
+                "attachments": [],
+                "embeds": [],
+                "reply": true,
+                "ephemeral": false,
+                "tts": false,
+                "overwrite": false,
+                "dontSend": false,
+                "editMessage": "0",
+                "editMessageVarName": "",
+                "storage": "0",
+                "varName2": "",
+                "name": "Send Message"
+              }
+            ]
+          }
+        ],
+        "attachments": [],
+        "embeds": [],
+        "reply": true,
+        "ephemeral": false,
+        "tts": false,
+        "overwrite": false,
+        "dontSend": false,
+        "editMessage": "0",
+        "editMessageVarName": "",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ],
+    "comType": "4",
+    "description": "Perform a coin toss.",
+    "parameters": [
+      {
+        "name": "Opponent",
+        "description": "Choose an opponent to play",
+        "type": "USER",
+        "required": true,
+        "choices": null
+      }
+    ]
+  }
