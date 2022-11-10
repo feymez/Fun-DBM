@@ -1,2 +1,5 @@
 # Fun-DBM
-Rawdaty komend dla społeczności Discord Bot Maker / 4Fun rawdate's Discord Bot Maker ~ feymez
+## Komendy do zabawy dla społeczności Discord Bot Maker ~ feymez
+
+# Fun-DBM
+## 4Fun Commands Discord Bot Maker ~ feymez
